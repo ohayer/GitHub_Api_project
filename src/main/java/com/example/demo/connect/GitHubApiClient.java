@@ -15,6 +15,7 @@ import okhttp3.*;
 public class GitHubApiClient {
     private final OkHttpClient httpClient;
     private final String baseUrl;
+    private String token = "";
 
     public GitHubApiClient() {
         httpClient = new OkHttpClient();
@@ -27,7 +28,7 @@ public class GitHubApiClient {
         Request request = new Request.Builder()
                 .url(url)
                 .header("Accept", "application/vnd.github+json")
-                .header("Authorization", "Bearer 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")
+                .header("Authorization", "Bearer "+ token)
                 .build();
 
         try (Response response = httpClient.newCall(request).execute()) {
@@ -56,7 +57,7 @@ public class GitHubApiClient {
         Request request = new Request.Builder()
                 .url(url)
                 .header("Accept", "application/vnd.github+json")
-                .header("Authorization", "Bearer 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")
+                .header("Authorization", "Bearer " + token)
                 .build();
 
         try (Response response = httpClient.newCall(request).execute()) {
@@ -82,7 +83,7 @@ public class GitHubApiClient {
         Request request = new Request.Builder()
                 .url(url)
                 .header("Accept", "application/vnd.github+json")
-                .header("Authorization", "Bearer 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")
+                .header("Authorization", "Bearer " + token)
                 .build();
 
         try (Response response = httpClient.newCall(request).execute()) {
